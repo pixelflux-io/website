@@ -1,0 +1,227 @@
+// Primary colors
+$color-primary-light: #e0e0e0;
+$color-primary-dark: #232335;
+$color-secondary-dark: #141414;
+$color-accent: #a8a8f8;
+$color-accent-hover: #c9c9ff;
+$color-accent-active: #e1e1ff;
+
+// UI colors
+$color-shadow-light: rgba(0, 0, 0, 0.2);
+$color-shadow-dark: rgba(0, 0, 0, 0.3);
+$color-overlay: rgba(0, 0, 0, 0.7);
+$color-bg-gradient: linear-gradient(45deg, $color-primary-dark, $color-secondary-dark);
+
+// Button colors
+$color-button-bg: #535;
+$color-button-text: #e0e0e0;
+$color-button-bg-hover: #747;
+$color-button-shadow: rgba(0, 0, 0, 0.2);
+$color-button-focus-outline: #e0e0e0;$color-button-disabled-bg: #444;
+$color-button-disabled-text: #888;
+
+
+// Scrollbar colors
+$color-scrollbar-track: #2c2c2c;
+$color-scrollbar-thumb: #535;
+$color-scrollbar-thumb-border: #4c2c4c;
+$color-scrollbar-thumb-hover: #777;
+
+
+@font-face {
+  font-family: 'kirbyss';
+  src: url('./kirby.ttf');
+}
+
+* {
+  font-family: 'kirbyss', Arial, sans-serif;
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background: $color-bg-gradient;
+  height: auto;
+  overflow-x: hidden;
+}
+h1, h2, h3 {
+  font-family: 'kirbyss', Arial, sans-serif;
+}
+#wrapper {
+  display: flex;
+  height: 100%;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $color-accent;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.1em;
+    background: #a8a8f8;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    color: $color-accent-hover;
+    transform: scale(1.05);
+    &:before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  }
+
+  &:active, &:focus {
+    outline: none;
+    color: $color-accent-active;
+  }
+}
+
+.center {
+  text-align: center;
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $color-primary-light;
+  max-width: 900px;
+  margin: auto;
+
+  h2 {
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 20px 0;
+    font-size: 2.5rem;
+  }
+
+  .logo {
+    font-size: 3.5rem;
+    margin-top: 5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+  }
+
+  #about-content {
+    width: 80%;
+    margin: 20px 0;
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+  }
+  .card-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 5rem;
+  }
+  .blockchain-card {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 420px;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background-image: url('./polygon.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+    h2 {
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      z-index: 2;
+      position: relative;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 1;
+      border-radius: inherit;
+    }
+  }
+}
+
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: $color-scrollbar-track;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $color-scrollbar-thumb;
+  border: 2px solid $color-scrollbar-thumb-border;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $color-scrollbar-thumb-hover;
+}
+
+
+@media (max-width: 620px) {
+  .homepage-container .blockchain-card {
+    max-width: 300px;
+    padding: 1.5rem;
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
+@media (max-width: 420px) {
+  .homepage-container .blockchain-card {
+    max-width: 250px;
+    padding: 1.2rem;
+
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .homepage-container .blockchain-card {
+    max-width: 200px;
+    padding: 1.2rem;
+    text-align:center;
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+}

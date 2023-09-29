@@ -1,0 +1,23 @@
+{
+  "name": "pixelflux",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel src/views/index.pug",
+    "build": "parcel build src/views/index.pug"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.9.3",
+    "@parcel/transformer-sass": "^2.9.3",
+    "parcel": "^2.9.3",
+    "pug": "^3.0.2",
+    "scss": "^0.2.4"
+  }
+}
