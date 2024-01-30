@@ -6,10 +6,6 @@ Pixelflux is a unique project that allows users to claim ownership over pixel la
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
-
-You need to have Node.js and npm installed on your machine. If you don't have them, you can download and install from here: [Node.js](https://nodejs.org/)
-
 ### Installing
 
 1. Clone the repository
